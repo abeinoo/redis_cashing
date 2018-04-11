@@ -1,24 +1,40 @@
-# README
+### Set up development environment
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+####  Requirements
+  * Install [Redis](https://redis.io/)
+    Linux
+  ```bash
+  wget http://download.redis.io/redis-stable.tar.gz
+  tar xvzf redis-stable.tar.gz
+  cd redis-stable
+  make
+  make install
+  ```
+  Mac
+  ```bash
+        $ brew update
+        $ brew install redis
+   ```
+  **we’ll use Redis…**
+    In our console run the next command
+  ````
+  redis-server
+  ````
+   And in another window also we’ll run redis client
+  ````
+  redis-cli monitor
+  ````
+### Gems:
+````
+- rack-mini-profiler:  middleware to display the speed of our page
+- faker:  library to generate dummy data
+`````
 
-Things you may want to cover:
+We’ll use Ruby client for Redis that helps us to connect to the redis instance easily
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+````
+gem 'redis'
+gem 'redis-namespace'
+gem 'redis-rails'
+gem 'redis-rack-cache'
+````
